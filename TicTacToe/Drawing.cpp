@@ -11,6 +11,15 @@ Drawing::Drawing(sf::RenderWindow &window, Game &game): window { window }, game{
 	winText.setFont(font);
 	winText.setStyle(sf::Text::Bold);
 	winText.setCharacterSize(50);
+
+	rectangleButton.setSize(sf::Vector2f(100, 30));
+	rectangleButton.setPosition(sf::Vector2f(5, game.yResolution - 30 - 5));
+	rectangleButton.setFillColor(sf::Color::Black);
+
+	resetText.setPosition(sf::Vector2f(5, game.yResolution - 30 - 5));
+	resetText.setFont(font);
+	resetText.setString("RESET");
+	resetText.setFillColor(sf::Color::Yellow);
 }
 
 void const Drawing::drawGrid() {
@@ -61,4 +70,15 @@ void Drawing::printWinnerText() {
 	window.draw(winText);
 }
 
+void Drawing::drawButton() const {
+	window.draw(rectangleButton);
+	window.draw(resetText);
+}
+
+bool Drawing::checkForClick(sf::Vector2f mousePosition) {
+	sf::Vector2f topLeft = rectangleButton.getPosition();
+	sf::Vector2f bottomRight = rectangleButton.getSize() + topLeft;
+
+	return (mousePosition.x > topLeft.x && mousePosition.y > topLeft.y && mousePosition.x < bottomRight.x && mousePosition.y < bottomRight.y);
+}
 

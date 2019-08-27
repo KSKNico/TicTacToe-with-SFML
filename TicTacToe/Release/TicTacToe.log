@@ -1,6 +1,47 @@
-﻿  main.cpp
+﻿  Drawing.cpp
+c:\users\nico\source\repos\tictactoe\tictactoe\drawing.cpp(16): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\nico\source\repos\tictactoe\tictactoe\drawing.cpp(19): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\nico\source\repos\tictactoe\tictactoe\drawing.cpp(33): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\nico\source\repos\tictactoe\tictactoe\drawing.cpp(34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\nico\source\repos\tictactoe\tictactoe\drawing.cpp(40): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\nico\source\repos\tictactoe\tictactoe\drawing.cpp(41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+c:\users\nico\source\repos\tictactoe\tictactoe\drawing.cpp(55): warning C4244: 'argument': conversion from '_Ty' to 'T', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+          and
+          [
+              T=float
+          ]
+  Game.cpp
+  main.cpp
   Generating code
-  1 of 488 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  8 of 495 functions ( 1.6%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

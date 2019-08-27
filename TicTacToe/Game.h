@@ -16,6 +16,8 @@ public:
 	int yResolution;
 	int currentPlayer;
 	int win;
+	int Player1Wins;
+	int Player2Wins;
 	struct tile {
 		std::array<int, 2> cords;
 		int player;
@@ -30,6 +32,7 @@ public:
 
 	void checkForWinner();
 
+	void reset();
 };
 
 float calculateDistance(float x1, float x2, float y1, float y2);

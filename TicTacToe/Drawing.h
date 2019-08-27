@@ -13,11 +13,17 @@ public:
 	sf::Texture cross;
 	sf::Text winText;
 	sf::Font font;
+	sf::RectangleShape rectangleButton;
+	sf::Text resetText;
 
 	Drawing(sf::RenderWindow &window, Game &game);
 
 	void const drawGrid();
 
 	void printWinnerText();
+
+	void drawButton() const;
+
+	bool checkForClick(sf::Vector2f mousePosition);
 };
 #endif

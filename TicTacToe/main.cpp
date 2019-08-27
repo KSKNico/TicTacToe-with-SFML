@@ -34,6 +34,7 @@ int main() {
 	Drawing drawing{ window, game };
 	int win = 0;
 	bool updated = true;
+	bool endDrawn = false;
 	while (window.isOpen())
 	{
 		// Event processing
@@ -44,9 +45,16 @@ int main() {
 			if (event.type == sf::Event::Closed)
 				window.close();
 			if (event.type == sf::Event::MouseButtonPressed) {
+				endDrawn = false;
 				if (game.win == 0) {
 					game.update(sf::Mouse::getPosition(window));
 					updated = true;
+				}
+				else {
+					if(drawing.checkForClick((sf::Vector2f)sf::Mouse::getPosition(window))) {
+						game.reset();
+						updated = true;
+					}
 				}
 			}
 		}
@@ -59,10 +67,12 @@ int main() {
 			updated = false;
 			window.display();
 		}
-		if (game.win != 0) {
+		if (game.win != 0 && !endDrawn) {
 			window.clear();
 			drawing.drawGrid();
 			drawing.printWinnerText();
+			drawing.drawButton();
+			endDrawn = true;
 			window.display();
 		}
 		

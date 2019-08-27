@@ -9,7 +9,6 @@ Game::Game(int x, int y, int squareSize, int padding, int t_winCondition) : x{ x
 	assert(t_winCondition <= x && t_winCondition <= y);
 	winCondition = t_winCondition;
 
-
 	// player1 -> 1
 	// player2 -> 2
 	currentPlayer = 1;
@@ -60,8 +59,6 @@ void Game::update(sf::Vector2i cords) {
 
 	// check for a winner
 	checkForWinner();
-
-	
 }
 
 void Game::checkForWinner() {
@@ -231,3 +228,26 @@ float calculateDistance(float x1, float x2, float y1, float y2) {
 	return sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2));
 }
 
+void Game::reset() {
+	tiles.clear();
+	for (int i = 0; i < x; i++) {
+		for (int j = 0; j < y; j++) {
+			tiles.push_back(
+				Game::tile{
+					std::array<int, 2> {i, j},
+					0,
+					std::array<float,2> {padding + squareSize * i + (float)squareSize / 2, padding + squareSize * j + (float)squareSize / 2},
+					std::array<int,2> {padding + squareSize * i, padding + squareSize * j}
+				}
+			);
+		}
+	}
+	if (win == 1) {
+		currentPlayer = 2;
+	}
+	else {
+		currentPlayer = 1;
+	}
+	win = 0;
+
+}
