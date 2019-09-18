@@ -65,6 +65,13 @@ void Game::checkForWinner() {
 	int player1;
 	int player2;
 
+	// check for draw
+	win = 3;
+	for (auto tile : tiles) {
+		if (tile.player == 0)
+			win = 0;
+	}
+
 	//horizontal wins
 	for (int i = 0; i < x; i++) {
 		player1 = 0;
