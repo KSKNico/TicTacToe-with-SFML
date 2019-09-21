@@ -70,8 +70,7 @@ int main() {
 		if (game.win != 0 && !endDrawn) {
 			window.clear();
 			drawing.drawGrid();
-			if (game.win != 3)
-				drawing.printWinnerText();
+			drawing.printWinnerText();
 			drawing.drawButton();
 			endDrawn = true;
 			window.display();

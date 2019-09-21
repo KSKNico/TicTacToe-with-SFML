@@ -62,9 +62,13 @@ void Drawing::printWinnerText() {
 		winText.setFillColor(sf::Color::Red);
 		winText.setString("Cross wins!");
 	}
-	else {
+	else if (game.win == 2) {
 		winText.setFillColor(sf::Color::Blue);
 		winText.setString("Circle wins!");
+	}
+	else if (game.win == 3) {
+		winText.setFillColor(sf::Color::Yellow);
+		winText.setString("Draw!");
 	}
 	// winText.setPosition(sf::Vector2f(10.0f, 10.0f));
 	window.draw(winText);
