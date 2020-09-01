@@ -3,6 +3,7 @@
 #include <assert.h>
 #include <array>
 #include <vector>
+#include <cmath>
 
 
 Game::Game(int x, int y, int squareSize, int padding, int t_winCondition) : x{ x }, y{ y }, padding{ padding }, squareSize{ squareSize } {
