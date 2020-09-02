@@ -6,6 +6,7 @@
 #include <iostream>
 #include <map>
 #include <sstream>
+#include <cmath>
 
 std::map<std::string, int> readConfig(std::string pathToConfig) {
 	std::map<std::string, int> configs;
